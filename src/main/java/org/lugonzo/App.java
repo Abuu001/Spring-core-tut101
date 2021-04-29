@@ -32,5 +32,13 @@ public class App
         ApplicationContext context2 = new ClassPathXmlApplicationContext("studentBean.xml");
         Student stud1=(Student)context2.getBean("stud1");
         System.out.println(stud1);
+
+        //============customer============
+        System.out.println("------------------Customer--------------------------");
+        ApplicationContext context3= new ClassPathXmlApplicationContext("customer.xml");
+        CustomerService cust =(CustomerService)context3.getBean("cust1");
+        cust.printName();
+        cust.printUrl();
+
     }
 }
