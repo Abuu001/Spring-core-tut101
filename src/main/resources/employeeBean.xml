@@ -15,7 +15,16 @@
         <property name="eid" value="103"></property>
         <property name="eName" value="Linet"></property>
         <property name="eSalary" value="55000"></property>
+        <constructor-arg  ref="adrs"></constructor-arg>  <!--<<constructor injection-->
+
+      <!--  OR using setter injection
+        <property name="address" ref="adrs"></property>-->
     </bean>
 
+    <bean id="adrs" class="org.lugonzo.Address">
+        <property name="city" value="Amazonia"></property>
+        <property name="state" value="Washington"></property>
+        <property name="zipCode" value="502530"></property>
+    </bean>
 
 </beans>
