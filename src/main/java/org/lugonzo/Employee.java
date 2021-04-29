@@ -5,11 +5,17 @@ public class Employee {
     int eid;
     String eName;
     int eSalary;
+    Address address;
 
     public Employee() {
     }
 
-    public Employee(int eid,String eName,int eSalary) {
+    //constructor injection
+    public Employee(Address address) {
+        this.address = address;
+    }
+
+    public Employee(int eid, String eName, int eSalary) {
         this.eid = eid;
         this.eName = eName;
         this.eSalary = eSalary;
@@ -39,14 +45,30 @@ public class Employee {
         this.eSalary = eSalary;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    //setter injection
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "eid=" + eid +
                 ", eName='" + eName + '\'' +
-                ", eSalary='" + eSalary + '\'' +
+                ", eSalary=" + eSalary +
+                ", address=" + address +
                 '}';
     }
 
+    public void myInit(){
+        System.out.println("----Object initialized----");
+    }
 
+    public void myDestroy(){
+        System.out.println("----Object destroyed----");
+    }
 }
