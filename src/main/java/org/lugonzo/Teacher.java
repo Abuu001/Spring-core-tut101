@@ -1,2 +1,6 @@
-package org.lugonzo;public interface Teacher {
+package org.lugonzo;
+
+public interface Teacher {
+
+    public  void teach();
 }
