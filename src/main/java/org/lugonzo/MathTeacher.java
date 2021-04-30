@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary  //when we use @Primary it sets the class as a default when injected in other class
+@Primary  //when we use @Primary it sets the class as a default when injected in other class (when u have not used @Qualifier)
 public class MathTeacher implements Teacher{
 
     @Override
