@@ -53,5 +53,9 @@ public class App
         college.test();
         ((AnnotationConfigApplicationContext)context4).close();
 
+        AnnotationConfigApplicationContext context6= new AnnotationConfigApplicationContext(LearnerConfig.class);
+        Learner lear = (Learner)context6.getBean("learnerBean");
+        lear.displayLearnerInfo();
+        context6.close();
     }
 }
