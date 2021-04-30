@@ -7,7 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan(basePackages = "org.lugonzo") // when using beanTag thre is no deed of declaring this line(use it when u hav e declared a component)
-/*@PropertySource("classPath:collegeInfo.properties")*/
+@PropertySource("collegeInfo.properties")
 public class CollegeConfig {
 
     //Nb our method name is going to be our bean ID
