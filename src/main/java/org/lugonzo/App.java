@@ -1,6 +1,7 @@
 package org.lugonzo;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -39,6 +40,18 @@ public class App
         CustomerService cust =(CustomerService)context3.getBean("cust1");
         cust.printName();
         cust.printUrl();
+
+        ApplicationContext context5= new AnnotationConfigApplicationContext(EmployeeConfig.class);
+        Employee emp2 =(Employee)context5.getBean("employee101");
+        System.out.println(emp2);
+
+        System.out.println("------------------Annotations--------------------------");
+      /*  ApplicationContext context4= new ClassPathXmlApplicationContext("collegeBean.xml");*/
+        ApplicationContext context4= new AnnotationConfigApplicationContext(CollegeConfig.class);
+        College college= context4.getBean("collegeBean",College.class);
+        System.out.println("Object is " +college);
+        college.test();
+        ((AnnotationConfigApplicationContext)context4).close();
 
     }
 }
